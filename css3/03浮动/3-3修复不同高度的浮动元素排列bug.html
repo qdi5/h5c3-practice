@@ -22,6 +22,15 @@
         body * + * {
             margin-top: 1.5em;
         }
+        /* 清除浮动 */
+        .clearfix::before, 
+        .clearfix::after {
+            display: table; /* 防止伪元素的外边距折叠 */
+            content: " ";
+        }
+        .clearfix::after {
+            clear: both;
+        }
         .container {
             max-width: 1080px;
             margin: 0 auto;
@@ -40,19 +49,25 @@
         }
         .media {
             float: left;
-            width: 50%;
+            /* 减去每行的外边距，防止换行 */
+            width: calc(50% - 1.5em);
+            /* 添加右底部的外边距 */
+            margin: 0 1.5em 1.5em 0;
             padding: 1.5em;
             background-color: #eee;
             border-radius: .5em;
         }
-        /* 清除浮动 */
-        .clearfix::before, 
-        .clearfix::after {
-            display: table; /* 防止伪元素的外边距折叠 */
-            content: " ";
+        .media:nth-child(odd) {
+            clear: left;
         }
-        .clearfix::after {
-            clear: both;
+        .media .media-image {
+            float: left;
+        }
+        .media .media-body {
+            margin-top: 0;
+        }
+        .media .media-body h4 {
+            margin-top: 0;
         }
     </style>
 </head>
