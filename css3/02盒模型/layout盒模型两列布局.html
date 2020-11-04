@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    /* 避免破坏第三方组件的盒模型 begin */
+    :root {
+      box-sizing: border-box;
+    }
+
+    *,
+    ::before,
+    ::after {
+      /* 告诉其他所有元素和伪元素继承其盒模型 */
+      box-sizing: inherit;
+    }
+    /* 避免破坏第三方组件的盒模型 end */
+
+    body {
+      background-color: #eee;
+      font-family: Helvetica, Arial, sans-serif;
+    }
+    header {
+      color: #fff;
+      background-color: #0072b0;
+      border-radius: .5em;
+    }
+    main {
+      display: block;
+    }
+    .main {
+      float: left;
+      width: 70%;
+      background-color: #fff;
+      border-radius: .5em;
+    }
+    .sidebar {
+      float: left;
+      width: 30%;
+      padding: 1.5em;
+      background-color: #fff;
+      border-radius: .5em;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Fraklin Running Club</h1>
+  </header>
+  <div class="container">
+    <main class="main">
+      <h2>Come join us</h2>
+      <p>
+        NANTES - A fire in the 15-century cathedral in the western French city of Nantes blew out stained glass windows and destroyed the grand organ on Saturday, and officials said they suspected arson.
+      </p>
+    </main>
+    <aside class="sidebar">
+      <div class="widget"></div>
+      <div class="widget"></div>
+    </aside>
+  </div>
+</body>
+</html>

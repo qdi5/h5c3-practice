@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>em相对单位</title>
+  <style>
+    :root {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+    body {
+      font-size: 30px;
+    }
+    .padded {
+      font-size: 20px;
+      padding: 1em;
+    }
+    .box {
+      display: inline-block;
+      padding: 1em;
+      border-radius: 1em;
+      background-color: lightgray;
+      font-size: 10px;
+    }
+    .small {
+      font-size: 12px;
+    }
+    .large {
+      font-size: 18px;
+    }
+    .slogan {
+      font-size: 1.2em; /* 19.2px */
+      padding: 1.2em; /* 23.04px */
+      background-color: red;
+      background-clip: content-box;
+      border: 1px solid green;
+    }
+    ul {
+      font-size: 0.8em;
+    }
+    /* 纠正文字缩小的问题 */
+    ul ul {
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+    <blockquote>
+      1em等于当前元素的字号
+    </blockquote>
+    <p class="padded">
+      欲将沉醉换悲凉，清歌莫断肠。这混乱的尘世，究竟充斥了多少绝望和悲伤。你想去做一个勇敢的男子，为爱，为信仰，轰轰烈烈的奋斗一场。你周身充斥着无人可比的灵气和光芒。你有着与伟人比肩的才气和名声，你是那样高傲孤洁的男子。你的一寸狂心未说，已经几度黄昏雨。
+    </p>
+    <div class="box small"></div> <br/>
+    <div class="box large"></div>
+    <p>
+      We love coffee
+      <p class="slogan">We love coffee</p>
+    </p>
+
+    <h3>em同时用于字号和其他属性</h3>
+    <p><strong>浏览器必须先计算字号，然后使用这个计算值去算出其余的属性值。</strong></p>
+    <ul id="ul">
+      <li>
+        Top level
+        <ul>
+          <li>
+            Second level
+            <ul>
+              <li>
+                Third level
+                <ul>
+                  <li>
+                    Fourth level
+                    <ul>
+                      <li>Fifth level</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <script>
+      let el = document.querySelector('.slogan')
+      let fz = window.getComputedStyle(el).getPropertyValue('font-size')
+      console.log('字体大小：', fz) // 19.2px
+      let ul = document.getElementById('ul');
+      let liArr = [...ul.querySelectorAll('li')]
+      liArr.forEach(el => {
+        console.log(el, window.getComputedStyle(el)['font-size'])
+      });
+    </script>
+</body>
+</html>

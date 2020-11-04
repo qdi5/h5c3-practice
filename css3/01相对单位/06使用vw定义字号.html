@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使用vw定义字号</title>
+  <style>
+    :root {
+      font-size: calc(.5em + 1vw);
+    }
+  </style>
+</head>
+<body>
+  使用calc(.5em + 1vw)定义字号
+  <p>
+    0.5em保证了最小字号，1vw确保了字体会随着视口缩放
+  </p>
+  <script>
+    let root = document.documentElement
+    console.log(root.clientWidth, window.getComputedStyle(root)['font-size'])
+    window.onresize = function () {
+      
+      console.log(root.clientWidth, window.getComputedStyle(root)['font-size'])
+    }
+  </script>
+</body>
+</html>

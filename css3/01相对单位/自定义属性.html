@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自定义属性</title>
+  <style>
+    :root {
+      --main-font: Helvetica, Arial, sans-serif;
+      --color: red;
+      --brand-color: black;
+    }
+    p {
+      font-family: var(--main-font);
+      background-color: var(--color);
+      border: 5px solid var(--brand-color);
+      /* 提供备用值  */
+      color: var(--scx, blue)
+    }
+    /* 在dark里重新设置变量的值 */
+    .dark {
+      --color: blue;
+      --brand-color: yellow;
+      --main-font: '微软雅黑';
+      color: #fff
+    }
+  </style>
+</head>
+<body>
+  <p>
+    自定义属性
+  </p>
+  <p class="dark">
+    动态改变自定义属性
+  </p>
+  <script>
+    var rootElement = document.documentElement
+    var styles = window.getComputedStyle(rootElement)
+    var mainColor = styles.getPropertyValue('--brand-color')
+    console.log(String(mainColor).trim())
+    rootElement.style.setProperty('--brand-color', 'orange')
+  </script>
+</body>
+</html>

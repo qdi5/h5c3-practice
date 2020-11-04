@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *,:before,:after {
+      box-sizing: border-box;
+    }
+    .sidebar {
+      padding: 30px;
+      background-color: yellow;
+    }
+    .button-link {
+      display: block;
+      padding: .5em;
+      color: #fff;
+      background-color: #0090c9;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .sponsor-link {
+      display: block;
+      color: #0072b0;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    /* 猫头鹰选择器 */
+    body * + * {
+      margin-top: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <a href="" class="button-link">follow us on twitter</a>
+    <a href="" class="button-link">like us Facebook</a>
+    <a href="/sponsors" class="sponsor-link">become a sponsor</a>
+  </aside>
+</body>
+</html>

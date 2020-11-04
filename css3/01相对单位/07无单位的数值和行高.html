@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>无单位的数值和行高</title>
+  <style>
+    body {
+      line-height: 1.2;
+      /* 文字会重叠 */
+      line-height: 1.2em;
+    }
+    .about-us,
+    .unit {
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+  <strong>一个无单位的0只能用于长度值和百分比，比如内边距、边框和宽度等，而不能用于角度值，比如度，或者时间相关的值，比如秒</strong>
+  <p class="about-us">
+    line-height既可以有单位，也可以无单位。通常我们应该使用无单位的数值，因为他们继承的方式不一样。
+  </p>
+  <p class="unit">
+    NANTES - A fire in the 15-century cathedral in the western French city of Nantes blew out stained glass windows and destroyed the grand organ on Saturday, and officials said they suspected arson.
+  </p>
+  <p>
+    当一个元素的值定义为长度（px、em、rem）时，子元素会继承它的计算值；
+    当使用em等单位定义行高时，他们的值是计算值，传递到了任何继承子元素上。
+  </p>
+  <script>
+     let root = document.querySelector('.unit')
+    console.log(root.clientWidth, window.getComputedStyle(root)['font-size'])
+    window.onresize = function () {
+      
+      console.log(root.clientWidth, window.getComputedStyle(root)['font-size'])
+    }
+  </script>
+</body>
+</html>

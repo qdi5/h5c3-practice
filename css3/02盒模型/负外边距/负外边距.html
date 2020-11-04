@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *,:before,:after {
+      box-sizing: border-box;
+    }
+    .wrapper {
+      padding-left: 20px;
+      border: 1px solid red;
+
+    }
+    .wrapper .box {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      line-height: 100px;
+      text-align: center;
+      background-color: green;
+    }
+    .box.one {
+      margin-top: -20px;
+    }
+    .box.two {
+      margin-left: -20px
+    }
+    .box.three {
+      display: inline-block;
+      margin-right: -20px;
+      opacity: .5;
+    }
+    
+    .box.four {
+      margin-bottom: -20px;
+    }
+    .box.five {
+      opacity: .5;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <p>设置左边或顶部的负外边距，元素就会相应地向左或向上移动，导致元素与它前面的元素重叠</p>
+  <p>设置右边或者底部的负外边距，并不会移动元素，而是将它后面的元素拉过来</p>
+  <div class="wrapper">
+    <div class="box one">1</div>
+    <div class="box two">2</div>
+    <div class="box three">3</div><span>测试margin-right呀</span>
+    <div class="box four">4</div>
+    <div class="box five">5</div>
+  </div>
+</body>
+</html>

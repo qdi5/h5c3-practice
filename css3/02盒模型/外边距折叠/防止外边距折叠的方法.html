@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>对容器使用overflow: auto(或者非visible的值)，防止内部元素的外边距跟容器外部的外边距折叠。</li>
+    <li>在两个外边距之间加上边框或者内边距，防止它们折叠</li>
+    <li>如果容器为浮动元素、内联块、绝对定位或固定定位时，外边距不会再它外面折叠</li>
+    <li>当使用Flexbox布局时，弹性布局内的元素之间不会发生外边距折叠</li>
+    <li>当元素显示为table-cell时不具备外边距属性，因此它们不会折叠。此外还有table-row和大部分其他表格显示类型，但不包括table、table-inline、table-caption</li>
+  </ul>
+</body>
+</html>

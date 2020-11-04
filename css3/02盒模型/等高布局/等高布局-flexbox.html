@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>等高布局</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      display: flex;
+    }
+    .main {
+      width: 70%;
+      height: 400px;
+      background-color: red;
+      border-radius: .5em;
+    }
+    .sidebar {
+      width: 30%;
+      /* 外边距并不会作用于table-cell元素 */
+      margin-left: 1.5em;
+      padding: 1.5em;
+      border-radius: .5em;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+      <div class="main"></div>
+      <div class="sidebar"></div>
+    </div>
+</body>
+</html>

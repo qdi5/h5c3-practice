@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    header {
+      padding-top: 4em;
+      padding-bottom: 4em;
+      color: #fff;
+      background-color: #0072b0;
+      border: 1px solid red;
+      border-radius: .5em;
+    }
+  </style>
+</head>
+<body>
+  <h1>垂直居中指南</h1>
+  <ul>
+    <li><strong>可以用一个自然高度的容器吗？</strong>给容器加上相等的上下内边距让内容居中</li>
+    <li><strong>容器需要指定高度或者避免使用内边距吗？</strong>对容器使用display: table-cell和vertical-align: middle</li>
+    <li><strong>可以用Flexbox吗？</strong>如果不需要支持IE9，可以用Flexbox居中内容。</li>
+    <li><strong>容器里面的内容只有一行文字吗？</strong>设置一个大的行高，让他等于理想的容器高度。这样会让容器扩展到能够容纳行高。如果内容不是行内元素，可以设置为inline-block</li>
+    <li><strong>容器和内容高度都知道吗？</strong>将内容绝对定位。</li>
+    <li><strong>不知道内部元素的高度？</strong>用绝对定位结合变形</li>
+  </ul>
+</header>
+</html>

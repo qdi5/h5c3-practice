@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rem</title>
+  <style>
+    :root {
+      font-size: 1em;
+    }
+    ul {
+      font-size: .8rem;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>
+      Top level
+      <ul>
+        <li>
+          Second level
+          <ul>
+            <li>First level</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p>
+    作者一般会用rem设置字号，用px设置边框，用em设置其他大部分属性，尤其是内边距、外边距和圆角（有时用百分比设置容器宽度）
+  </p>
+  <script>
+      let ul = document.querySelector('ul');
+      let liArr = [...ul.querySelectorAll('li')]
+      liArr.forEach(el => {
+        console.log(el, window.getComputedStyle(el)['font-size'])
+      });
+  </script>
+</body>
+</html>

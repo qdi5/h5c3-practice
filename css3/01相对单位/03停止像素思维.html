@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>停止像素思维</title>
+  <style>
+    :root {
+      font-size: .75em;
+    }
+
+    @media (min-width: 800px) {
+      :root {
+        font-size: .875em;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      :root {
+        font-size: 1em;
+      }
+    }
+
+    .panel {
+      /* 让面板有一个可预测的字号 */
+      font-size: 1rem;
+      padding: 1em;
+      border-radius: .5em;
+      border: 1px solid #999;
+    }
+
+    .panel > h2 {
+      margin-top: 0;
+      /* 相对于父元素panel的font-size大小 */
+      font-size: .8em;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    .panel.large {
+      font-size: 1.2rem
+    }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <h2>Single-origin</h2>
+    <div class="panel-body">
+      从下落中的小球数组中移除当前执行完动画的小球，并设置它的show为false
+      <a href="http://www.baidu.com">百度</a>
+    </div>
+  </div>
+  <div class="panel large">
+    <h2>Single-origin</h2>
+    <div class="panel-body">
+      从下落中的小球数组中移除当前执行完动画的小球，并设置它的show为false
+      <a href="http://www.baidu.com">百度</a>
+    </div>
+  </div>
+</body>
+</html>
