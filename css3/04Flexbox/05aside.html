@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox</title>
+    <style>
+        :root {
+            box-sizing: border-box;
+        }
+        *,
+        ::before,
+        ::after {
+            box-sizing: inherit;
+        }
+        body {
+            background-color: #709b90;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        body * + * {
+            margin-top: 1.5em;
+        }
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        .site-nav {
+            display: flex;
+            padding: .5em;
+            list-style-type: none;
+            border-radius: .2em;
+            background-color: #5f4b44;
+        }
+        .site-nav > li {
+            margin-top: 0; /* 覆盖猫头鹰选择器的顶部外边距 */
+        }
+        .site-nav li + li {
+            margin-left: 1.5em;
+        }
+        .site-nav .nav-right {
+            /* 弹性盒子内的auto外边距会填充所有可用空间 */
+            margin-left: auto;
+        }
+        .site-nav > li > a {
+            /*
+                如果链接还是行内元素，那么它给父元素贡献的高度会根据行高计算，
+                而不是根据内边距和内容，这样不符合预期。
+            */
+            display: block; /* 让链接成为块级元素，这样就能撑开父元素的高度 */
+            padding: .5em 1em; 
+            background-color: #cc6b5a;
+            color: white;
+            text-decoration: none;
+        }
+
+        .tile {
+            padding: 1.5em;
+            background-color: #fff;
+        }
+
+        .flex {
+            display: flex;
+        }
+        /* 去掉顶部外边距，给每个弹性子元素之间加上间隔 */
+        .flex > * + * {
+            margin-top: 0;
+            margin-left: 1.5em;
+        }
+        .column-main {
+            /* 
+                等价于： 
+                    flex: 2 1 0%
+                或者
+                    flex-grow: 2;
+                    flex-shrink: 1;
+                    定义元素大小的基准值，即一个初始的”主尺寸”；
+                    它的初始值是auto，
+                    此时浏览器会检查元素是否设置了width属性值。
+                    如果有，则使用width的值作为flex-basis的值；
+                    如果没有，则用元素内容自身的大小。
+                    如果flex-basis的值不是auto，width属性会被
+                    忽略
+                    flex-basis: 0%; 
+                通常，首选下面的简写属性 
+            */
+            flex: 66.67%; 
+        }
+        .column-sidebar {
+            flex: 33.33%;
+            display: flex;
+            /*
+            弹性容器会占据100%的可用宽度，而高度则由自身的内容来决定。
+            即使改变主轴方向，也不会影响这一本质。
+            弹性容器的高度由弹性子元素决定，它们会正好填满容器。
+            在垂直的弹性盒子里，子元素的flex-grow和flex-shrink不会起作用，
+            除非有“外力”强行改变弹性容器的高度。
+            */
+            flex-direction: column;
+        }
+        .column-sidebar > .tile {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Ink</h1>
+        </header>
+        <nav>
+            <ul class="site-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/pricing">Pricing</a></li>
+                <li><a href="/support">Support</a></li>
+                <li class="nav-right"><a href="/about">About</a></li>
+            </ul>
+        </nav>
+        <main class="flex">
+            <div class="column-main tile">
+                <h1>eam collaboration done right</h1>
+                <p>Thousands of teams from all over the
+                    world turn to <b>Ink</b> to communicate
+                    and get things done.</p>
+                <h1>eam collaboration done right</h1>
+                <p>Thousands of teams from all over the
+                    world turn to <b>Ink</b> to communicate
+                    and get things done.</p>
+                <h1>eam collaboration done right</h1>
+                <p>Thousands of teams from all over the
+                    world turn to <b>Ink</b> to communicate
+                    and get things done.</p>
+                <h1>eam collaboration done right</h1>
+                <p>Thousands of teams from all over the
+                    world turn to <b>Ink</b> to communicate
+                    and get things done.</p>
+            </div>
+            <div class="column-sidebar">
+                <div class="tile">
+                    <form action="" class="login-form">
+                        <h3>Login</h3>
+                        <p>
+                            <label for="username">Username</label>
+                            <input type="text" id="username" type="text" name="username">
+                        </p>
+                        <p>
+                            <label for="password">Password</label>
+                            <input type="password" type="password" name="password">
+                        </p>
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+                <div class="tile centered">
+                    <small>Starting at</small>
+                    <div class="cost">
+                        <span class="cost-currency">$</span>
+                        <span class="cost-dollars">20</span>
+                        <span class="cost-cents">.00</span>
+                    </div>
+                    <a class="cta-button" href="/pricing">Sign up</a>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
